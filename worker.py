@@ -7,7 +7,6 @@ from temporalio.worker import Worker
 
 # Import workflow and activity definitions
 from workflow import EventLoopWorkflow
-from activities import process_event, send_notification
 
 # Configure logging
 logging.basicConfig(
@@ -27,7 +26,7 @@ async def main():
         client,
         task_queue="eventloop-task-queue",
         workflows=[EventLoopWorkflow],
-        activities=[process_event, send_notification],
+        activities=[],
     )
     
     print("Worker started. Listening for tasks on 'eventloop-task-queue'...")

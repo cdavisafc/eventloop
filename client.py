@@ -26,11 +26,11 @@ async def main():
     print(f"Started workflow with ID: {handle.id}")
     print(f"Workflow run ID: {handle.result_run_id}")
 
-    #sleep(1)
+    #sleep(5)
     
     # Send a signal to increment x
     await handle.signal(EventLoopWorkflow.increment_x)
-    print("Sent signal to increment x")
+    print("Sent signal to multiply x by 2")
     
     # Wait for the workflow to complete
     result = await handle.result()
